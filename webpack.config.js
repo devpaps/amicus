@@ -31,9 +31,12 @@ const config = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
-			filename: 'app.html',
+			filename: 'index.html',
 			title: 'Amicus',
 			chunks: ['app'],
+		}),
+		new CopyPlugin({
+			patterns: [{ from: './src/assets/', to: './assets/' }],
 		}),
 	],
 	mode: 'development',
@@ -77,14 +80,11 @@ module.exports = (env, argv) => {
 			new MiniCssExtractPlugin({ filename: 'main.[fullhash].css' }),
 			new CleanWebpackPlugin(),
 			new CopyPlugin({
-				patterns: [
-					{ from: './src/assets/', to: './assets/' },
-					{ from: './index.html', to: './' },
-				],
+				patterns: [{ from: './src/assets/', to: './assets/' }],
 			}),
 			new HtmlWebpackPlugin({
 				template: './src/index.html',
-				filename: 'app.html',
+				filename: 'index.html',
 				title: 'Amicus',
 				chunks: ['app'],
 			})
