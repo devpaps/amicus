@@ -1,0 +1,38 @@
+.grid {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+	justify-items: center;
+}
+
+.grid-item {
+	width: fit-content;
+	transition: box-shadow 0.3s;
+}
+
+.grid-item:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+nav input#menu {
+	display: none;
+}
+
+nav label {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	nav label {
+		display: block;
+		text-align: center;
+		margin: 1rem 0;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	nav input#menu:checked ~ .meny {
+		height: 100%;
+		margin: 2rem 0 2rem;
+	}
+}
