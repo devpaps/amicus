@@ -42,7 +42,7 @@ const config = {
 	mode: 'development',
 	devServer: {
 		port: 3000,
-		contentBase: path.resolve(__dirname, './dist'),
+		static: path.resolve(__dirname, './dist'),
 		hot: true,
 		historyApiFallback: true,
 	},
