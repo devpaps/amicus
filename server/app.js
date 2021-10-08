@@ -23,10 +23,6 @@ app.use(express.json());
 
 app.use(express.static(`${__dirname}/dist`));
 
-/* app.use((req, res, next) => {
-	console.log(req.headers);
-}); */
-
 // Routes, mount
 // Endpoints
 app.use('/api/v1/pets', petRouter);
