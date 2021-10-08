@@ -14,7 +14,7 @@ import {
 	useToast,
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
-
+import DOMPurify from 'dompurify';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import usePost from '../hooks/FetchPost';
@@ -65,11 +65,12 @@ function Post() {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		const x = inputEl.current.value;
+		const cleanInputs = DOMPurify.sanitize(x);
 		//TODO: const x ska läggas in som name och value
 		console.log(x);
 		setValues({
 			...values,
-			[name]: x,
+			[name]: cleanInputs,
 		});
 	};
 

@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../components/userContext';
+import DOMPurify from 'dompurify';
 
 const Login = () => {
 	const history = useHistory();
@@ -30,9 +31,11 @@ const Login = () => {
 
 	function handleChange(e) {
 		const { name, value } = e.target;
+		const cleanInputs = DOMPurify.sanitize(value);
+
 		setValues({
 			...values,
-			[name]: value,
+			[name]: cleanInputs,
 		});
 	}
 
