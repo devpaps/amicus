@@ -24,10 +24,7 @@ const verifyToken = (req, res, next) => {
 		}
 	});
 	token = parsedCookies.jwt;
-	console.log('funkar ' + parsedCookies.jwt);
 	var decoded = jwt_decode(token);
-
-	console.log(decoded);
 	if (!token)
 		return res.status(401).json({
 			status: 'Failed',

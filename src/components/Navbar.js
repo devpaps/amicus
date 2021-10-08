@@ -131,7 +131,6 @@ const Navbar = (props) => {
 					<MenuItem to='/'>Hem</MenuItem>
 					<MenuItem to='/forum'>Forum</MenuItem>
 					<MenuItem to='/about'>Om oss</MenuItem>
-					<MenuItem to='/'>Index.html</MenuItem>
 
 					{user?.username ? (
 						<MenuItem to={`/user/profile/${user._id}`}>Min profil</MenuItem>

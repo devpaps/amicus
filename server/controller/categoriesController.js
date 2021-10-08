@@ -3,11 +3,7 @@ const Categories = require('../model/categoriesModel');
 
 exports.createCategories = async (req, res) => {
 	try {
-		console.log(req.body);
-		// Returns a promise
 		const newCategories = await Categories.create(req.body);
-		console.log(newCategories);
-
 		res.status(201).json({
 			status: 'Success',
 			data: { newCategories },

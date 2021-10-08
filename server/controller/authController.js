@@ -106,7 +106,6 @@ exports.logout = (req, res) => {
 };
 
 exports.verifyAuth = async (req, res) => {
-	console.log(req.authUser);
 	const { id } = req.authUser;
 	// Is the user logged in with correct token?
 	try {
