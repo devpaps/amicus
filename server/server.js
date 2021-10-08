@@ -34,9 +34,10 @@ mongoose.connection.on('connected', () => {
 
 db();
 
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
+app.set('port', process.env.PORT || 5000);
 
 //Server
-app.listen(port, () => {
-	console.log(`Lyssnar på port https://localhost:${port}`);
+app.listen(app.get('port'), () => {
+	console.log(`Lyssnar på port https://localhost:5000`);
 });
